@@ -1,5 +1,6 @@
 class Solution {
 
+    //todo: 만들어진 섬의 넒이, 길이 구하는 방법 생각해보기
     public int numIslands(char[][] grid) {
         int answer = 0;
 
