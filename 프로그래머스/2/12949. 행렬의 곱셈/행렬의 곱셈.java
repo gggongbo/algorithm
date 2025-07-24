@@ -2,17 +2,20 @@ import java.util.*;
 
 class Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
-        int[][] answer = new int[arr1.length][arr2[0].length];
+        int columns = arr1.length;
+        int rows = arr2[0].length;
+        int multipleCount = arr1[0].length;
+        
+        int[][] answer = new int[columns][rows];
 
-        for (int i = 0; i < arr1.length; i++) {
-            for (int x = 0; x < arr2[0].length; x++) {
-                int sum = 0;
-                for (int j = 0; j < arr1[i].length; j++) {
-                    sum += arr1[i][j] * arr2[j][x];
+        for (int c = 0; c < columns; c++) {
+            for (int r = 0; r < rows; r++) {
+                for (int m = 0; m < multipleCount; m++) {
+                    answer[c][r] += arr1[c][m] * arr2[m][r];
                 }
-                answer[i][x] = sum;
             }
         }
+        
         return answer;
     }
 }
