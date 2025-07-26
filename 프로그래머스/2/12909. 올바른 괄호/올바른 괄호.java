@@ -2,10 +2,8 @@ import java.util.*;
 
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-
+        ArrayDeque<Character> stack = new ArrayDeque<>();
         char[] chars = s.toCharArray();
-        Stack<Character> stack = new Stack<>();
         
         for(char c : chars){
             if(c == '('){
